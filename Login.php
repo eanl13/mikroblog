@@ -34,8 +34,6 @@ public $con;
         }
     }
 
-    public $email, $password;
-
     public function girisYap($email,$password) {
 
         $sql = 'SELECT * '

@@ -1,3 +1,12 @@
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 <?php
 session_start();
 include_once  './Login.php';
@@ -8,6 +17,10 @@ if ( $Login->isLogined() == false ){
     exit;
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +49,7 @@ if ( $Login->isLogined() == false ){
                 echo '<tr><td colspan="5">No record.</td></tr>';
             }else{
                 foreach ($UyeList as $UyeItem) {
-                    $UyeItem = (object)$UyeItem;
+                    $UyeItem =(object)$UyeItem;
                     ?>
                     <tr>
                         <td><?php echo $UyeItem->id; ?></td>
@@ -44,8 +57,8 @@ if ( $Login->isLogined() == false ){
                         <td><?php echo $UyeItem->firstname; ?></td>
                         <td><?php echo $UyeItem->lastname; ?></td>
                         <td>
-                            <a href="takip_et.php?id=<?php echo $UyeItem->id; ?>">
-                                Takip Et
+                            <a href="ajax.php?id=<?php echo $UyeItem->id; ?>">
+                                <input data-takip="$id" class='takip_et' type='button' value='Takip Et' name='takip_et' />
                             </a>
                         </td>
                     </tr>

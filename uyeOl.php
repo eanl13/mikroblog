@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once './Login.php';
 $Login = new Login;
 
@@ -17,9 +18,6 @@ if(isset($_POST['btnGonder'])){
         echo 'bütün alanların doldurulması zorunludur.';
     }
 }
-
-
-
 ?>
 
 
